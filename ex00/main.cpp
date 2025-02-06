@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:53:05 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/06 13:06:41 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/06 13:27:35 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,18 @@
 
 int main()
 {
-	Zombie* zombieHeap = newZombie("heapZombie");
-	zombieHeap->announce();
-	delete zombieHeap;
+	//std::cout << "Zombie Kiwi is created. " << std::endl;
+	Zombie Kiwi = Zombie("Kiwi");
+	Kiwi.announce();
+	Zombie Foo = Zombie("Foo");
+	Foo.announce();
+	randomChump("Banana");
 	
-	randomChump("stackZombie");
+	Zombie* Orange = newZombie("Orange_onheap");
+	Orange->announce();
+	// printf("%p\n", Orange);
+	delete Orange;
+	// printf("%p\n", Orange);
+	
 	return 0;
 }
