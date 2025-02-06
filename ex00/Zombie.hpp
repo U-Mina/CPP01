@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:39:58 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/06 12:25:15 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/06 12:58:58 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
 	~Zombie();//destructor
 	void announce(void);	
 };
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif
 
