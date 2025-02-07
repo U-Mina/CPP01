@@ -6,15 +6,15 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 13:15:06 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 14:23:55 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/07 14:53:17 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
 #define HUMANA_HPP
 
-#include <string>
 #include "Weapon.hpp"
+#include <string>
 
 /**
  * take weapon in constructor and will always have it
@@ -26,12 +26,12 @@
 class HumanA
 {
 private:
-	Weapon& Weapon;
 	std::string name;
+	Weapon& weapon;
 public:
-	HumanA(std::string name, Weapon::&Weapon);
-	~HumanA();
+	HumanA(std::string name, Weapon& weapon);
 	void attack();
+	// ~HumanA();
 };
 
 #endif
