@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:09:54 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 16:47:02 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/07 16:56:13 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,16 @@ int main(int ac, char **av)
 		std::cerr << "Fail to open: " << filename << std::endl;	
 		return 1;
 	}
-	
 	std::string outFile = filename + ".replace";
-	std::ifstream outFile()
-
-
+	std::ofstream outPut(outFile);
+	if (!outPut.is_open())
+	{
+		std::cerr << "Fail to create: " << outFile << std::endl;	
+		return 1;
+	}
+	std::string content;
+	//to implement the logic of finding s1, and replace s1 with s2
+	//do tmrw
 	
 	return 0;
 }
