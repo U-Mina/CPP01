@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 13:05:28 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 14:03:52 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/07 14:34:59 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Weapon
 private:
 	std::string type;
 public:
-	// Weapon();
+	Weapon(std::string type);
 	// ~Weapon();
+	const std::string& getType() const;//ret ref to type
 	void setType(std::string type);
-	const std::string& getType() const;
 };
 
 #endif
