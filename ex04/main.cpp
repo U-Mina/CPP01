@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:09:54 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 16:30:02 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/07 16:47:02 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,15 @@ int main(int ac, char **av)
 		std::cerr << "Argument(s) is empty!" << std::endl;	
 		return 1;
 	}
-
+	std::ifstream fileName(filename);
+	if (!fileName.is_open())
+	{
+		std::cerr << "Fail to open: " << filename << std::endl;	
+		return 1;
+	}
+	
+	std::string outFile = filename + ".replace";
+	std::ifstream outFile()
 
 
 	
