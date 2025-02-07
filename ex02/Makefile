@@ -1,6 +1,6 @@
 NAME	= addressMani
 C++		= c++
-CFLAG	= -Wall -Wextra -Werror
+CFLAG	= -Wall -Wextra -Werror -std=c++98
 SRC		= main.cpp
 OBJ		= $(SRC:.cpp=.o)
 
