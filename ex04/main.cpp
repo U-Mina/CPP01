@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:09:54 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 16:56:13 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 11:05:19 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,9 @@
 #include <fstream>
 #include <string>
 
-/**
- * TASKS:
- * - 3 para: filename, s1, s2 (ac check)
- * - open <filename>, copy into <filename>.replace
- *    + replace every s1 with s2 (namely, no s1 anymore but all s2)
- * cases to handle:
- * 		+ s1 or s2 == "null";
- * 		+ cant find any s1 in <filename>
- * 		+ <filename> does not exist; open fail; 
- */
 int main(int ac, char **av)
 {
+	//para num check and para assign
 	if (ac != 4)//3 args
 	{
 		std::cerr << "Invalid argument number!" << std::endl;	
@@ -39,22 +30,69 @@ int main(int ac, char **av)
 		std::cerr << "Argument(s) is empty!" << std::endl;	
 		return 1;
 	}
+	
+	//std read/open file part
 	std::ifstream fileName(filename);
 	if (!fileName.is_open())
 	{
 		std::cerr << "Fail to open: " << filename << std::endl;	
 		return 1;
 	}
-	std::string outFile = filename + ".replace";
-	std::ofstream outPut(outFile);
+	
+	//std step in createing output file (with .replace name)
+	std::string outname = filename + ".replace";
+	std::ofstream outPut(outname);
 	if (!outPut.is_open())
 	{
-		std::cerr << "Fail to create: " << outFile << std::endl;	
+		std::cerr << "Fail to create: " << outname << std::endl;	
 		return 1;
 	}
-	std::string content;
-	//to implement the logic of finding s1, and replace s1 with s2
-	//do tmrw
 	
+	//searching and replacing part with std::getline()
+	std::string currentLine;
+	//while not reach EOF, read the <filename> line by line and store in currentLine
+	while (std::getline(fileName, currentLine))
+	{
+		size_t i = 0;
+		//search for matches until no more found in *currentLine*!!
+		while (1)
+		{
+			//finding position of s1, staring from 0 index
+			size_t pos = currentLine.find(s1, i);
+			//npos indicates: not found or end of string, break loop
+			if (pos == std::string::npos)
+				break ;
+			std::string frontLine = currentLine.substr(0, pos);
+			std::string backLine = currentLine.substr(i + s1.length());
+			currentLine = frontLine + s2 + backLine;//s1 is replaced and line combined
+			i = pos + s2.length();
+		}
+		outPut << currentLine << "\n";
+	}
 	return 0;
 }
+
+/**
+ * TASKS:
+ * - 3 para: filename, s1, s2 (ac check)
+ * - open <filename>, copy into <filename>.replace
+ *    + replace every s1 with s2 (namely, no s1 anymore but all s2)
+ * cases to handle:
+ * 		+ s1 or s2 == "null";
+ * 		+ cant find any s1 in <filename>
+ * 		+ <filename> does not exist; open fail;
+ * FUNCTIONS:
+ * 		- std::string::replace xxxx
+ * 		- std::string::find/substr/append/insert() OK
+ */
+/**
+ * TAKEAWAY:
+ * - std::string substr()
+ * 	+ 1 parameter: substr(size_t pos)
+ * 		- take all chars from pos to end
+ * 	EG: "helloWorld"; substr(6) --> "orld"
+ * 	+ 2 para: substr(size_t pos, size_t len)
+ * 		- pos = where to start; len = how many chars to take
+ * 	EG: std::string "helloWorld"; str.substr(0, 5) --> "hello"
+ * 
+ */
