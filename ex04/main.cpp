@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:09:54 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 11:05:19 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 11:28:28 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,30 @@ int main(int ac, char **av)
 		{
 			//finding position of s1, staring from 0 index
 			size_t pos = currentLine.find(s1, i);
-			//npos indicates: not found or end of string, break loop
-			if (pos == std::string::npos)
+			//npos indicates: not found or end of string or s1.length exceed left length, break
+			if (pos == std::string::npos || ((pos + s1.length()) > currentLine.length()))
 				break ;
-			std::string frontLine = currentLine.substr(0, pos);
-			std::string backLine = currentLine.substr(i + s1.length());
-			currentLine = frontLine + s2 + backLine;//s1 is replaced and line combined
-			i = pos + s2.length();
+			
+			//full match of string checking
+			bool matchFlag = true;
+			for (size_t index = 0; index < s1.length(); ++index)
+			{
+				if (currentLine[pos + index] != s1[index])
+				{
+					matchFlag = false;
+					break ;	
+				}
+			}
+			
+			if (matchFlag == true)
+			{
+				std::string frontLine = currentLine.substr(0, pos);
+				std::string backLine = currentLine.substr(i + s1.length());
+				currentLine = frontLine + s2 + backLine;//s1 is replaced and line combined
+				i = pos + s2.length();
+			}
+			else
+				i = pos + 1; 
 		}
 		outPut << currentLine << "\n";
 	}
