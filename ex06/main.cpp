@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:17:24 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 14:49:22 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 14:53:31 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char **av)
 		return 1;
 	}
 	Harl harl;
-	levelKey LvlKey = getKey(av[1]);
+	levelKey LvlKey = getlevelkey(av[1]);
 	switch (LvlKey)
 	{
 		case DEBUG:

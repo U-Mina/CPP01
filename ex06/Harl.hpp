@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:17:32 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 14:39:49 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 14:53:17 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ enum levelKey
 	ERROR,
 	INVALID
 };
-levelKey getKey(const std::string& lvl)
+levelKey getlevelkey(const std::string& lvl)
 {
 	if (lvl == "DEBUG")
 		return DEBUG;
