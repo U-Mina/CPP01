@@ -6,7 +6,7 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 13:03:43 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 13:17:52 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 14:12:56 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ private:
 		void (Harl::*ft)(void);//ptr to member ft
 	};
 	//an array of structs, will map complainlvl to corressponding ft ptr
-	complainLvl levels[4];
-	
+	static complainLvl levels[4];
+	//static keyword: init on;y once, shared by all instances of Harl class
 public:
 	void complain(std::string level);
 };
