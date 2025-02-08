@@ -6,11 +6,12 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:27:28 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 14:29:07 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/08 14:31:36 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+#include <iostream>
 
 Harl::complainLvl Harl::levels[4] = {
 	{"DEBUG", &Harl::debug},
@@ -18,10 +19,6 @@ Harl::complainLvl Harl::levels[4] = {
 	{"WARNING", &Harl::warning},
 	{"ERROR", &Harl::error}
 };
-/*THIS IS equal to the syntax below:*/
-// Harl::complainLvl Harl::levels[4];
-// 	levels[0].level = "DEBUG";
-// 	levels[0].ft = &Harl::debug;
 
 void Harl::debug(void)
 {
@@ -35,7 +32,8 @@ void Harl::info()
 
 void Harl::warning()
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
+	std::cout << "I’ve been coming for years whereas you started working here since last month." << std::endl;
 }
 
 void Harl::error()
@@ -43,11 +41,6 @@ void Harl::error()
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-/**
- * THIS: pointer to current object
- * '*': derefrence PTR to member func in levels[i].ft
- * ==> a PTR to member ft that can be called on current Harl obj
- */
 void Harl::complain(std::string level)
 {
 	for (int i = 0; i < 4; ++i)
