@@ -6,12 +6,11 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:51:09 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/07 12:05:36 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/09 11:32:02 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iomanip>
 
 Zombie* zombieHorde(int N, std::string name)
 {

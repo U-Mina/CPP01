@@ -6,13 +6,13 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:09:54 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/08 12:37:45 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/09 11:33:21 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
 #include <string>
+#include <fstream>
+#include <iostream>
 
 int main(int ac, char **av)
 {

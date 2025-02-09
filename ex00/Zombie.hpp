@@ -6,14 +6,13 @@
 /*   By: ewu <ewu@student.42heilbronn.de>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:39:58 by ewu               #+#    #+#             */
-/*   Updated: 2025/02/06 12:58:58 by ewu              ###   ########.fr       */
+/*   Updated: 2025/02/09 11:31:17 by ewu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-# include <iomanip>
 # include <string>
 
 class Zombie
